@@ -1,3 +1,4 @@
+
 import { fetchPokemonList } from './api.js';
 
 const pokemonGrid = document.getElementById('mainPkmGrid');
@@ -9,7 +10,7 @@ async function renderPokemons() {
         const pokemonId = index + 1;
         
         const card = document.createElement('div');
-        card.classList.add('pkmn-card'); 
+        card.classList.add('pokemon-card'); 
 
         card.innerHTML = `
             <div class="pokemon-image">
@@ -23,6 +24,27 @@ async function renderPokemons() {
 
         pokemonGrid.appendChild(card);
     });
-}
 
+    const busqueda = document.getElementById('pkmSearchInput');
+
+    busqueda.addEventListener('input', () => {
+        const texto = busqueda.value.toLowerCase();
+        const cards = document.querySelectorAll('.pokemon-card'); 
+
+    cards.forEach(card => {
+        const pokemonNombre = card.querySelector('.pkm-name').textContent.toLowerCase();
+        const pokemonNumero = card.querySelector('.pkm-id').textContent.toLowerCase();
+
+        if (pokemonNombre.includes(texto) || pokemonNumero.includes(texto)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    });
+}
 renderPokemons();
+
+
+
+    
