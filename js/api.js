@@ -7,11 +7,23 @@
 const BASE_URL = 'https://pokeapi.co/api/v2';
 
 /**
- * Retorna la llista dels primers 151 Pokémon.
+ * Retorna la llista dels primers 151 Pokémon                                                            
  * Endpoint: GET /pokemon?limit=151
  * @returns {Promise<Array<{name: string, url: string}>>}
  */
-async function fetchPokemonList() {
+export async function fetchPokemonList() {
+    try {
+        const response = await fetch(`${BASE_URL}/pokemon?limit=151`);
+        if (!response.ok) {
+            throw new Error('Error en la carga de Pokémon');
+        }
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
+
     // TODO
 }
 
