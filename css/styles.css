@@ -161,3 +161,16 @@ nav {
     margin-left: auto;
     margin-right: 2%;
 }
+
+
+.pkmn-id {
+    background-color: beige;
+    display: flex;
+    margin-right: auto;
+}
+
+.perfil-pkmn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

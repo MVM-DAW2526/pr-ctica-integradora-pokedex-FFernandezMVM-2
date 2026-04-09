@@ -15,7 +15,7 @@ export async function fetchPokemonList() {
     try {
         const response = await fetch(`${BASE_URL}/pokemon?limit=151`);
         if (!response.ok) {
-            throw new Error('Error en la carga de Pokémon');
+            throw new Error('Error al cargar');
         }
         const data = await response.json();
         return data.results;
@@ -37,7 +37,7 @@ export async function fetchPokemon(idOrName) {
     try {
         const response = await fetch(`${BASE_URL}/pokemon/${idOrName}`);
     if (!response.ok) {
-        throw new Error('Error en la carga de Pokémon');
+        throw new Error('Error al cargar');
     }
     const data = await response.json();
     return data;
@@ -58,7 +58,7 @@ export async function fetchPokemon(idOrName) {
     try {
         const response = await fetch(`${BASE_URL}/pokemon-species/${id}`);
      if (!response.ok) {
-        throw new Error('Error en la carga de Pokémon');
+        throw new Error('Error al cargar');
     }
     const data = await response.json();
     return data;
@@ -78,7 +78,7 @@ export async function fetchEvolutionChain(url) {
     try {
         const response = await fetch(url);
     if (!response.ok) {
-        throw new Error('Error en la carga de Pokémon');
+        throw new Error('Error al cargar');
     }
     const data = await response.json();
     return data;
