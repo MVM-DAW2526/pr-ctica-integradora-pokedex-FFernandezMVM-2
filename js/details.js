@@ -58,7 +58,7 @@ const evoPkmn = document.querySelector('.evo-pkmn');
         let proximoPaso = evolutionChain.chain;
         while (proximoPaso) {
             const item = document.createElement('div');
-            item.textContent = proximoPaso.species.name;
+            item.textContent = proximoPaso.species.name + "↓";
             ul3.appendChild(item);
             proximoPaso = proximoPaso.evolves_to[0];
         evoPkmn.appendChild(ul3);

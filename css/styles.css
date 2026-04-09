@@ -119,8 +119,28 @@ nav {
     padding: 20px;
     font-size: 20px;
     font-family: Arial, sans-serif;
+    
 }
 
+.pokemon-info {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.pkmn-details {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+a:hover {
+    display: inline-block;
+    text-decoration: underline;
+    cursor: pointer;
+    transform: scale(1.15);
+    transition: transform 0.2s;
+}
 
 .buscador {
     display: flex;
@@ -174,12 +194,14 @@ nav {
     display: flex;
     flex-direction: column;
     margin-left: 5%;
+    background-color: aqua;
 }
 
 .ablt-pkmn {
     display: flex;
     flex-direction: column;
         margin-left: 5%;
+        background-color: aquamarine;
 
 }
 .mvnt-pkmn {
@@ -187,6 +209,7 @@ nav {
     grid-template-columns: repeat(6, 1fr); 
     align-items: center;
         margin-left: 5%;
+        background-color: beige;
 }
 
 .evo-pkmn {

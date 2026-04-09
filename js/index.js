@@ -12,13 +12,15 @@ async function renderPokemons() {
         card.classList.add('pokemon-card'); 
 
         card.innerHTML = `
+        <a href='details.html?id=${pokemonId}' class="pkmn-details">
             <div class="pokemon-image">
                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png" alt="pokemon">
             </div>
             <div class="pokemon-info">
-                <span class="pkm-id">0${pokemonId}</span>
+                <span class="pkm-id">${pokemonId}</span>
                 <h3 class="pkm-name">${pokemon.name}</h3>
             </div>
+        </a>
         `;
 
         pokemonGrid.appendChild(card);
