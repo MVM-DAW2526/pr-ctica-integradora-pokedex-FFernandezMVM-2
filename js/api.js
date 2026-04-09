@@ -42,7 +42,7 @@ export async function fetchPokemon(idOrName) {
     const data = await response.json();
     return data;
     } catch (error) {
-        console.error(error);
+        console.error("error, esto no va manin");
         return null;
     }
 }

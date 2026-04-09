@@ -12,7 +12,7 @@ async function renderPokemons() {
         card.classList.add('pokemon-card'); 
 
         card.innerHTML = `
-        <a href='details.html?id=${pokemonId}' class="pkmn-details">
+        <a href="details.html?id=${pokemonId}" class="pkmn-details">
             <div class="pokemon-image">
                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png" alt="pokemon">
             </div>
@@ -37,7 +37,7 @@ async function renderPokemons() {
         const pokemonNumero = card.querySelector('.pkm-id').textContent.toLowerCase();
 
         if (pokemonNombre.includes(texto) || pokemonNumero.includes(texto)) {
-            card.style.display = 'block';
+            card.style.display = '';
         } else {
             card.style.display = 'none';
         }

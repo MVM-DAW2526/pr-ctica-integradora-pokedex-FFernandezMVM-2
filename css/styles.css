@@ -129,9 +129,12 @@ nav {
 }
 
 .pkmn-details {
+    display: block;
     text-decoration: none;
     color: black;
     font-weight: bold;
+    height: 100%;
+    width: 100%;
 }
 
 a:hover {
