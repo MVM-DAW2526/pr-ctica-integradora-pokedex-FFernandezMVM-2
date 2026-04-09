@@ -24,7 +24,6 @@ export async function fetchPokemonList() {
         return [];
     }
 
-    // TODO
 }
 
 /**
@@ -33,8 +32,19 @@ export async function fetchPokemonList() {
  * @param {string|number} idOrName
  * @returns {Promise<Object>}
  */
-async function fetchPokemon(idOrName) {
-    // TODO
+export async function fetchPokemon(idOrName) {
+    
+    try {
+        const response = await fetch(`${BASE_URL}/pokemon/${idOrName}`);
+    if (!response.ok) {
+        throw new Error('Error en la carga de Pokémon');
+    }
+    const data = await response.json();
+    return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
 }
 
 /**
@@ -43,8 +53,19 @@ async function fetchPokemon(idOrName) {
  * @param {number} id
  * @returns {Promise<Object>}
  */
-async function fetchSpecies(id) {
-    // TODO
+ export async function fetchSpecies(id) {
+    
+    try {
+        const response = await fetch(`${BASE_URL}/pokemon-species/${id}`);
+     if (!response.ok) {
+        throw new Error('Error en la carga de Pokémon');
+    }
+    const data = await response.json();
+    return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
 }
 
 /**
@@ -52,6 +73,17 @@ async function fetchSpecies(id) {
  * @param {string} url
  * @returns {Promise<Object>}
  */
-async function fetchEvolutionChain(url) {
-    // TODO
+export async function fetchEvolutionChain(url) {
+    
+    try {
+        const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error('Error en la carga de Pokémon');
+    }
+    const data = await response.json();
+    return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
 }

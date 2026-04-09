@@ -1,4 +1,3 @@
-
 import { fetchPokemonList } from './api.js';
 
 const pokemonGrid = document.getElementById('mainPkmGrid');
