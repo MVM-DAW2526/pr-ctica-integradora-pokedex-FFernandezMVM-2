@@ -167,10 +167,31 @@ nav {
     background-color: beige;
     display: flex;
     margin-right: auto;
+    height: 200px;
 }
 
 .perfil-pkmn {
     display: flex;
     flex-direction: column;
+    margin-left: 5%;
+}
+
+.ablt-pkmn {
+    display: flex;
+    flex-direction: column;
+        margin-left: 5%;
+
+}
+.mvnt-pkmn {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
     align-items: center;
+        margin-left: 5%;
+}
+
+.evo-pkmn {
+    display: flex;
+    flex-direction: column;
+        margin-left: 5%;
+
 }

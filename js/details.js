@@ -21,12 +21,15 @@ async function details() {
             const h3 = document.createElement('h3');
             const weight = document.createElement('h3');
             const height = document.createElement('h3');
+            const type = document.createElement('h3');
              h3.textContent = pokemon.name;
             PerfilPkmn.appendChild(h3);
-            height.textContent = "Altura: " + (pokemon.height / 10);
+            height.textContent = "Altura: " + (pokemon.height / 10 + " M");
             PerfilPkmn.appendChild(height);
-            weight.textContent = "Peso: " + (pokemon.weight / 10);
+            weight.textContent = "Peso: " + (pokemon.weight / 10 + " Kg");
             PerfilPkmn.appendChild(weight);
+            type.textContent = "Tipo: " + (pokemon.types[0].type.name);
+            PerfilPkmn.appendChild(type);
             
 
 
@@ -40,13 +43,12 @@ const abltPkmn = document.querySelector('.ablt-pkmn');
         abltPkmn.appendChild(ul);
 
 const movPkmn = document.querySelector('.mvnt-pkmn');
-        const ul2 = document.createElement('ul');
         pokemon.moves.forEach(move => {
-            const li = document.createElement('li');
-            li.textContent = move.move.name;
-            ul2.appendChild(li);
+            const columnas = document.createElement('div');
+            columnas.textContent = move.move.name;
+            movPkmn.appendChild(columnas);
         });
-        movPkmn.appendChild(ul2);
+       
 
 const evoPkmn = document.querySelector('.evo-pkmn');
         const ul3 = document.createElement('ul');
@@ -55,7 +57,7 @@ const evoPkmn = document.querySelector('.evo-pkmn');
     
         let proximoPaso = evolutionChain.chain;
         while (proximoPaso) {
-            const item = document.createElement('li');
+            const item = document.createElement('div');
             item.textContent = proximoPaso.species.name;
             ul3.appendChild(item);
             proximoPaso = proximoPaso.evolves_to[0];
