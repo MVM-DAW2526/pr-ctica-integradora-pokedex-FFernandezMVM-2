@@ -11,7 +11,7 @@ async function details() {
 
     const FotoPkmn = document.querySelector('.pkmn-id');
     const imagen = document.createElement('img');
-        imagen.src = pokemon.sprites.front_default; // Esto hace que aparezcan los sprites en la foto
+        imagen.src = pokemon.sprites.front_default; // Esto hace que aparezcan los sprites en la foto (Lo he puesto yo eh que conste que asi no me lio gracias)
         FotoPkmn.appendChild(imagen);
 
 

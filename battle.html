@@ -21,9 +21,33 @@
         </nav>
     </header>
     <main>
-        <div class="img-fondo">
-            <img src="img/battle_bg.png" alt="aaa">
+        <div class="imgHunt">
+        
+
+        <div id="enemy">
+            <img src="" alt="Pokemon Salvaje" id="pkmnSalvaje">
+            <div class="enemylife">
+            <h3 id="enemy-name">???</h3>
+                <h3 id="hp-enemy">Vida del oponente.</h3>
+            </div>
         </div>
+
+        <div id="player">
+            <img src="" alt="Pokemon del jugador" id="pkmn-player">
+            <div class="playerlife">
+                <h3 id="player-name">Tu Pokémon</h3>
+                <h3 id="hp-player">Vida del jugador.</h3>
+            </div>
+        </div>
+
+        <div class="battle-actions">
+            <button id="btn-attack" class="botones">Atacar</button>
+            <button id="btn-catch" class="botones">Capturar</button>
+            <button id="btn-run" class="botones">Huir</button>
+        </div>
+    </div>
+
     </main>
+    <script type="module" src="js/battle.js"></script>
 </body>
 </html>
