@@ -5,11 +5,13 @@ const pokemonGrid = document.getElementById('mainPkmGrid');
 async function renderPokemons() {
     const pokemons = await fetchPokemonList();
 
+    
     pokemons.forEach((pokemon, index) => {
         const pokemonId = index + 1;
         
         const card = document.createElement('div');
         card.classList.add('pokemon-card'); 
+
 
         card.innerHTML = `
         <a href="details.html?id=${pokemonId}" class="pkmn-details">
@@ -22,11 +24,12 @@ async function renderPokemons() {
             </div>
         </a>
         `;
-
+        
         pokemonGrid.appendChild(card);
     });
 
     const busqueda = document.getElementById('pkmSearchInput');
+
 
     busqueda.addEventListener('input', () => {
         const texto = busqueda.value.toLowerCase();

@@ -1,7 +1,5 @@
 import { fetchPokemon } from './api.js';
 
-
-
 async function details() {
 
     const params = new URLSearchParams(window.location.search);
@@ -13,7 +11,7 @@ async function details() {
 
     const FotoPkmn = document.querySelector('.pkmn-id');
     const imagen = document.createElement('img');
-        imagen.src = pokemon.sprites.front_default;
+        imagen.src = pokemon.sprites.front_default; // Esto hace que aparezcan los sprites en la foto
         FotoPkmn.appendChild(imagen);
 
 
@@ -31,6 +29,32 @@ async function details() {
             type.textContent = "Tipo: " + (pokemon.types[0].type.name);
             PerfilPkmn.appendChild(type);
             
+            // Esto es pa las stats
+            const stats = document.querySelector('.stats-pkmn');
+            pokemon.stats.forEach(stat => {
+                const row = document.createElement('div');
+                row.classList.add('stat-row');
+            
+                const porcentaje = (stat.base_stat / 255) * 100;
+                
+                row.innerHTML = `
+        
+            <span class="stat-label">${stat.stat.name}</span>
+        <div class="stat-bg">
+            <div class="stat-fill" id="bar-${stat.stat.name}"></div>
+        </div>
+        <span class="stat-number">${stat.base_stat}</span>
+    `;
+    stats.appendChild(row);
+
+    setTimeout(() => {
+        const bar = document.getElementById(`bar-${stat.stat.name}`);
+        if (bar) {
+            bar.style.width = `${porcentaje}%`;
+        }
+    }, 100); 
+});
+
 
 
 const abltPkmn = document.querySelector('.ablt-pkmn');
