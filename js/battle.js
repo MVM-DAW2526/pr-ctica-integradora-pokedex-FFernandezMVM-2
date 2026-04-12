@@ -22,12 +22,24 @@ async function battle() {
     const btnAttack = document.getElementById('btn-attack');
     const btnCatch = document.getElementById('btn-catch');
     const btnRun = document.getElementById('btn-run');
+    const logs = document.getElementById('alert-msg');
 
     btnCatch.addEventListener('click', function() {
         const misPokemons = JSON.parse(localStorage.getItem("misPokemons")) || [];
+
+        let captura = Math.random();
+        if (enemylife < (pokemonSalvaje.stats[0].base_stat * 0.3)) {
+            captura += 0.3;
+        }
+        if (captura > 0.5) {
+            logs.textContent = '¡Has capturado al pokemon!';
         misPokemons.push(pokemonSalvaje);
         localStorage.setItem("misPokemons", JSON.stringify(misPokemons));
         window.location.href = "my_pokemons.html";
+        } else {
+            alert("No has capturado al pokemon. ¡Sigue luchando!");
+        }
+
     });
 
     btnRun.addEventListener('click', function() {
@@ -45,14 +57,20 @@ async function battle() {
             enemylife -= playerAttack;
             if (enemylife <= 0) enemylife = 0;
         const hpEnemyText = document.getElementById('hp-enemy').textContent = enemylife;
-            console.log("Ataque del pokemon tuyo");
+                        logs.textContent = '¡Tu pokemon está atacando!';
 
             setTimeout(function() {
             if (enemylife > 0) {
                 playerlife -= enemyAttack;
-            if (playerlife <= 0) playerlife = 0;
+
+            if (playerlife <= 0)  {
+                playerlife = 0;
+                logs.textContent = '¡Tu pokemon se ha debilitado!';
+                setTimeout(() => { window.location.href = "hunt.html"; } ,2000);
+            } else {
+                logs.textContent = '¡El pokemon rival está atacando!';
+            }
         const hpPlayerText =  document.getElementById('hp-player').textContent = playerlife;
-            console.log("Ataque del pokemon enemigo");
             }    
         }, 1000);
 

@@ -481,3 +481,35 @@ position: absolute;
     
     border-radius: 20px;
 }
+
+#alert-msg {
+    background-color: white;
+    border: 2px solid;
+    padding: 10px;
+    margin-bottom: 10px;
+    min-height: 40px;
+    text-align: center;
+}
+
+#mainPkmGrid {
+    display: grid; 
+    grid-template-columns: repeat(6, 1fr);    
+    gap: 20px;
+    padding: 20px;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.pokemon-card {
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    background-color: wheat;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.05);
+        transition: transform 0.2s;
+    background-color: wheat;
+}
