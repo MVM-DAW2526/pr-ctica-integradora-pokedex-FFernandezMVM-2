@@ -1,26 +1,31 @@
 import { fetchPokemon } from './api.js';
-   
+import { Pokemon } from './pokemon.js';
 
 async function battle() {
 
-    const  pokemonSalvaje = JSON.parse(sessionStorage.getItem("pokemonSalvaje"));
+    const pSalvaje = JSON.parse(sessionStorage.getItem("pokemonSalvaje"));
+    const pPlayer = await fetchPokemon(25)
 
-    const pokemonPlayer = await fetchPokemon(25)
+    const pokemonSalvaje = Pokemon.fromApi(pSalvaje);
+    const pokemonPlayer = Pokemon.fromApi(pPlayer);
 
-    const fotopkmn = document.getElementById('pkmnSalvaje');
-    fotopkmn.setAttribute("src", pokemonSalvaje.sprites.front_default);
+    document.getElementById('pkmnSalvaje').setAttribute("src", pokemonSalvaje.sprites.front_default);
+    document.getElementById('enemy-name').textContent = pokemonSalvaje.name;
 
     const enemyName = document.getElementById('enemy-name');
     enemyName.textContent = pokemonSalvaje.name;
     
-    const pkmnPlayer = document.getElementById('pkmn-player');
-    pkmnPlayer.setAttribute("src", pokemonPlayer.sprites.back_default);
+    document.getElementById('pkmn-player').setAttribute("src", pokemonPlayer.sprites.back_default);
+    document.getElementById('player-name').textContent = pokemonPlayer.name;
 
     const playerName = document.getElementById('player-name');
     playerName.textContent = pokemonPlayer.name;
 
-    const enemyMax = pokemonSalvaje.stats[0].base_stat;
-    const playerMax = pokemonPlayer.stats[0].base_stat;
+    let enemylife = pokemonSalvaje.hp;
+    let playerlife = pokemonPlayer.hp;
+    const enemyAttack = pokemonSalvaje.attack;
+    const playerAttack = pokemonPlayer.attack;
+
     
     const btnAttack = document.getElementById('btn-attack');
     const btnCatch = document.getElementById('btn-catch');
@@ -49,11 +54,6 @@ async function battle() {
         window.location.href = "hunt.html";
     });
 
-    let enemylife = pokemonSalvaje.stats[0].base_stat;
-    let playerlife = pokemonPlayer.stats[0].base_stat;
-
-    const enemyAttack = pokemonSalvaje.stats[1].base_stat;
-    const playerAttack = pokemonPlayer.stats[1].base_stat;
 
 
     btnAttack.addEventListener('click', function() {

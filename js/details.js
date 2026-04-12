@@ -36,15 +36,31 @@ async function details() {
                 row.classList.add('stat-row');
             
                 const porcentaje = (stat.base_stat / 255) * 100;
-                
-                row.innerHTML = `
+            
+
+        const spanName = document.createElement('span');
+        spanName.classList.add('stat-label');
+        spanName.textContent = stat.stat.name;
         
-            <span class="stat-label">${stat.stat.name}</span>
-        <div class="stat-bg">
-            <div class="stat-fill" id="bar-${stat.stat.name}"></div>
-        </div>
-        <span class="stat-number">${stat.base_stat}</span>
-    `;
+        const divBg = document.createElement('div');
+        divBg.classList.add('stat-bg');
+
+        const divFill = document.createElement('div');
+        divFill.classList.add('stat-fill');
+        divFill.id =  `bar-${stat.stat.name}`;
+        divFill.style.width = `${stat.base_stat}%`
+
+        const spanNumber = document.createElement('span');
+        spanNumber.classList.add('stat-number');
+        spanNumber.textContent = stat.base_stat;
+
+        divBg.appendChild(divFill);
+        row.appendChild(spanName);
+        row.appendChild(divBg);
+        row.appendChild(spanNumber);
+
+        
+
     stats.appendChild(row);
 
     setTimeout(() => {
