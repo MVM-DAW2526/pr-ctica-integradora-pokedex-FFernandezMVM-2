@@ -18,6 +18,9 @@ async function battle() {
 
     const playerName = document.getElementById('player-name');
     playerName.textContent = pokemonPlayer.name;
+
+    const enemyMax = pokemonSalvaje.stats[0].base_stat;
+    const playerMax = pokemonPlayer.stats[0].base_stat;
     
     const btnAttack = document.getElementById('btn-attack');
     const btnCatch = document.getElementById('btn-catch');
@@ -35,11 +38,11 @@ async function battle() {
             logs.textContent = '¡Has capturado al pokemon!';
         misPokemons.push(pokemonSalvaje);
         localStorage.setItem("misPokemons", JSON.stringify(misPokemons));
-        window.location.href = "my_pokemons.html";
+        setTimeout(() => { window.location.href = "my_pokemons.html"; } ,2000);
+        
         } else {
             alert("No has capturado al pokemon. ¡Sigue luchando!");
         }
-
     });
 
     btnRun.addEventListener('click', function() {
@@ -58,6 +61,7 @@ async function battle() {
             if (enemylife <= 0) enemylife = 0;
         const hpEnemyText = document.getElementById('hp-enemy').textContent = enemylife;
                         logs.textContent = '¡Tu pokemon está atacando!';
+                
 
             setTimeout(function() {
             if (enemylife > 0) {
@@ -77,13 +81,7 @@ async function battle() {
 
     });
 
+
 }
 battle();
-//            const stats = document.querySelector('.stats-pkmn');
-           // pokemon.stats.forEach(stat => {
-             //   const row = document.createElement('div');
-               // row.classList.add('stat-row');
-            
-                //const porcentaje = (stat.base_stat / 255) * 100;
-
   
