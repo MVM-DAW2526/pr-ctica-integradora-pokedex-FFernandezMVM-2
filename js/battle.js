@@ -36,7 +36,7 @@ async function battle() {
         const misPokemons = JSON.parse(localStorage.getItem("misPokemons")) || [];
 
         let captura = Math.random();
-        if (enemylife < (pokemonSalvaje.stats[0].base_stat * 0.3)) {
+        if (enemylife < (pokemonSalvaje.hp * 0.3)) {
             captura += 0.3;
         }
         if (captura > 0.5) {
