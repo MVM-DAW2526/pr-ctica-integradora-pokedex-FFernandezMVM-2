@@ -7,12 +7,23 @@
 const BASE_URL = 'https://pokeapi.co/api/v2';
 
 /**
- * Retorna la llista dels primers 151 Pokémon.
+ * Retorna la llista dels primers 151 Pokémon                                                            
  * Endpoint: GET /pokemon?limit=151
  * @returns {Promise<Array<{name: string, url: string}>>}
  */
-async function fetchPokemonList() {
-    // TODO
+export async function fetchPokemonList() {
+    try {
+        const response = await fetch(`${BASE_URL}/pokemon?limit=151`);
+        if (!response.ok) {
+            throw new Error('Error al cargar');
+        }
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
+
 }
 
 /**
@@ -21,8 +32,19 @@ async function fetchPokemonList() {
  * @param {string|number} idOrName
  * @returns {Promise<Object>}
  */
-async function fetchPokemon(idOrName) {
-    // TODO
+export async function fetchPokemon(idOrName) {
+    
+    try {
+        const response = await fetch(`${BASE_URL}/pokemon/${idOrName}`);
+    if (!response.ok) {
+        throw new Error('Error al cargar');
+    }
+    const data = await response.json();
+    return data;
+    } catch (error) {
+        console.error("error, esto no va manin");
+        return null;
+    }
 }
 
 /**
@@ -31,8 +53,19 @@ async function fetchPokemon(idOrName) {
  * @param {number} id
  * @returns {Promise<Object>}
  */
-async function fetchSpecies(id) {
-    // TODO
+ export async function fetchSpecies(id) {
+    
+    try {
+        const response = await fetch(`${BASE_URL}/pokemon-species/${id}`);
+     if (!response.ok) {
+        throw new Error('Error al cargar');
+    }
+    const data = await response.json();
+    return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
 }
 
 /**
@@ -40,6 +73,17 @@ async function fetchSpecies(id) {
  * @param {string} url
  * @returns {Promise<Object>}
  */
-async function fetchEvolutionChain(url) {
-    // TODO
+export async function fetchEvolutionChain(url) {
+    
+    try {
+        const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error('Error al cargar');
+    }
+    const data = await response.json();
+    return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
 }
