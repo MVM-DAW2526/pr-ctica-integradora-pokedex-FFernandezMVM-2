@@ -73,7 +73,7 @@ async function battle() {
                 playerlife = 0;
                 logs.textContent = 'El pokemon rival está atacando';
                 setTimeout(() => { logs.textContent = '¡Tu pokemon se ha debilitado!'; }, 1000);
-                setTimeout(() => {  window.location.href = "hunt.html";} ,2000);
+                setTimeout(() => {  window.location.href = "hunt.html";} ,3000);
             }
         document.getElementById('hp-player').textContent = playerlife;
             }    
