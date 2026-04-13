@@ -6,6 +6,7 @@ async function battle() {
     const pSalvaje = JSON.parse(sessionStorage.getItem("pokemonSalvaje"));
     const pPlayer = await fetchPokemon(1)
 
+
     const pokemonSalvaje = Pokemon.fromApi(pSalvaje);
     const pokemonPlayer = Pokemon.fromApi(pPlayer);
 
@@ -64,7 +65,6 @@ async function battle() {
                         setTimeout(() => { logs.textContent = 'El pokemon rival se ha debilitado.'; }, 1000); 
                         setTimeout(() => { logs.textContent = '¡Has ganado la batalla!'; }, 1000); 
                 
-
             setTimeout(function() {
             if (enemylife > 0) {
                 playerlife -= enemyAttack;
