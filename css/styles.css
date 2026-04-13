@@ -119,5 +119,360 @@ nav {
     padding: 20px;
     font-size: 20px;
     font-family: Arial, sans-serif;
+    
 }
 
+.pokemon-info {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.pkmn-details {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    height: 100%;
+    width: 100%;
+}
+
+a:hover {
+    display: inline-block;
+    text-decoration: underline;
+    cursor: pointer;
+    transform: scale(1.15);
+    transition: transform 0.2s;
+}
+
+.buscador {
+    display: flex;
+    margin-top: 2%;
+    gap: 20px;
+    font-size: 20px;
+    margin-left: 2%;
+}
+
+.botones {
+    border: 2px solid black;
+    border-radius: 9999px;
+    padding: 4px 12px;
+    width: 8%;
+    background-color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+
+
+.nuevo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5%;
+    font-family: Arial, sans-serif;
+}
+
+.new-pokemon {
+    background-color: red;
+    color: rgb(255, 255, 255);
+    border-radius: 9999px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: 2%;
+}
+
+
+.pkmn-id {
+    background-color: beige;
+    display: flex;
+    margin-right: auto;
+    height: 200px;
+}
+
+.perfil-pkmn {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    background-color: aqua;
+}
+
+.ablt-pkmn {
+    display: flex;
+    flex-direction: column;
+        margin-left: 5%;
+        background-color: aquamarine;
+
+}
+.mvnt-pkmn {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    align-items: center;
+        margin-left: 5%;
+        background-color: beige;
+}
+
+.evo-pkmn {
+    display: flex;
+    flex-direction: column;
+        margin-left: 5%;
+
+}
+
+.stats-pkmn {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.stat-label {
+    width: 100px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.stat-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 40px;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-bar-bg {
+    background-color:  red;
+    border-radius: 10px;
+    flex-grow: 1;
+    height: 15px;
+    margin: 0 10px;
+    overflow: hidden;
+}
+
+.stat-bg {
+    background-color: #000000;
+    height: 12px;
+    border-radius: 6px;
+    width: 100%;
+    position: relative;
+}
+
+.stat-fill {
+    height: 100%;
+    background-color: #ff4136;
+    border-radius: 6px;
+    width: 0%;
+    transition: width 1.5s;
+}
+
+.stat-number {
+    font-family: monospace;
+    font-weight: bold;
+    text-align: right;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+option:hover {
+    background-color: inherit;
+    color: inherit;
+}
+
+.caza-pkmn {
+    display: flex;
+    height: 80vh;
+    background-color: #f0f0f0;
+}
+.map {
+    flex: 2;
+    background-image: url('/img/hunt_bg.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgHunt {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('/img/battle_bg.png');
+    background-size: cover; 
+    background-position: center;
+    overflow: hidden; 
+}
+
+#pkmn-salvaje {
+    width: 200px;
+    height: 200px;
+    z-index: 10;
+    filter: brightness(0);
+    transition: all 0.5s ease;
+}
+
+.reveal {
+    filter: brightness(1) !important;
+    transform: scale(1.2); 
+}
+
+#batalla-pkmn {
+    display: none;
+}
+
+.map {
+    cursor: pointer;
+}
+
+#new-zone {
+    display: none;
+}
+
+.ui {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-left: 4px solid #333;
+}
+
+#pkmnSalvaje {
+position: absolute;
+    top: 30%;
+    right: 40%;
+    text-align: center;
+    width: 300px;
+}
+
+#pkmn-player {
+position: absolute;
+top: 500px;
+    left: 30%;
+    text-align: center;
+    width: 300px;
+}
+
+#enemy-name {
+position: absolute;
+    top: 10%;      
+    margin-left: 200px;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#player-name {
+    position: absolute;
+    bottom: 20px;   
+    margin-left: 200px;     
+    display: flex;
+    flex-direction: column-reverse; 
+    align-items: center;
+}
+
+.enemylife {
+    position: relative;
+    background-color: beige; 
+    padding: 10px 20px;
+    border: 3px solid #333;
+    border-radius: 0 20px 0 0; 
+    width: fit-content;
+    margin-top: 30%;
+    margin-top: 10px; 
+}
+
+
+.playerlife {
+    position: relative;
+    background-color: beige; 
+    padding: 10px 20px;
+    border: 3px solid #333;
+    border-radius: 0 20px 0 0; 
+    width: fit-content;
+    margin-top: 30%;
+    margin-bottom: 10px; 
+}
+
+.battle-actions {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.battle-actions:hover {
+    cursor: pointer;
+}
+
+.btns-actions {
+    
+    border-radius: 20px;
+}
+
+#alert-msg {
+    background-color: white;
+    border: 2px solid;
+    padding: 10px;
+    margin-bottom: 10px;
+    min-height: 40px;
+    text-align: center;
+    width: 400px;
+}
+
+#mainPkmGrid {
+    display: grid; 
+    grid-template-columns: repeat(6, 1fr);    
+    gap: 20px;
+    padding: 20px;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.pokemon-card {
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    background-color: wheat;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s;
+    background-color: wheat;
+}
+
+.hp-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border: 2px solid #333;
+    height: 15px;
+    border-radius: 10px;
+    margin: 5px 0;
+    overflow: hidden; /* Para que el relleno no se salga de los bordes redondeados */
+}
+
+.hp-fill {
+    width: 100%; /* Empieza llena */
+    height: 100%;
+    background-color: #4caf50; /* Verde */
+    transition: width 0.5s ease-in-out, background-color 0.3s; /* Animación suave */
+}

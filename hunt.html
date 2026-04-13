@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caza Pokemons</title>
-    <link rel="stylesheet" href="css/hunt.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
@@ -20,10 +20,19 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <div class="img-fondo">
-            <img src="img/hunt_bg.png" alt="aaa">
+    <main class="caza-pkmn">
+        <div class="map">
+            <img src="" alt="aleatorio" id="pkmn-salvaje" class="pkmn-oculto">
+        </div>
+        <div class="ui">
+            <h2 class="pkmn-salvaje">???????</h2>
+            <div class="acciones">
+                <button id="btn-reveal">Explorar la zona.</button>
+                <button id="new-zone">Ir a una nueva zona.</button>
+                <button id="batalla-pkmn">¡A la batalla!</button>
+            </div>
         </div>
     </main>
+    <script type="module" src="js/hunt.js"></script>
 </body>
 </html>
